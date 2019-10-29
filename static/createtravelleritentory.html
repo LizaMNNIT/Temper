@@ -36,23 +36,19 @@
         <ul class="navbar-nav mr-lg-4 w-100">
           <li class="nav-item nav-search d-none d-lg-block w-100">
             <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #ffffff !important">
-              <a class="navbar-brand" href="#">Navbar</a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                   <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#">Rates&Trades</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="#">About Us</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link" href="#">Our Vision</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    <a class="nav-link" href="#">Help&Support</a>
                   </li>
                 </ul>
               </div>
@@ -64,7 +60,7 @@
          
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="images/faces/face5.jpg" alt="profile"/>
+              <img src="images/faces/USER.png" alt="profile"/>
               <span class="nav-profile-name">User Name</span>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
@@ -112,10 +108,10 @@
             </a>
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Create Requests</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">View Itenory</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Current Records</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Previous Records</a></li>
+                <li class="nav-item"> <a class="nav-link" href="createsenderrequest.html">Create Requests</a></li>
+                <li class="nav-item"> <a class="nav-link" href="sendercurrentrecords.html">Current Records</a></li>
+                <li class="nav-item"> <a class="nav-link" href="senderview.html">View Itenory</a></li>
+                <li class="nav-item"> <a class="nav-link" href="senderpreviousrecords.html">Previous Records</a></li>
               </ul>
             </div>
           </li>
@@ -137,8 +133,8 @@
                       
                       <form class="pt-3">
                             <div class="form-group">
-                                    <h5> From:</h5>
-                                  <select class="form-control form-control-lg" id="exampleFormControlSelect2">
+                                    <h5> Airport (From):</h5>
+                                  <select class="form-control form-control-lg" id="from_airline">
                                         <option value="DEL">DEL-Indira Gandhi International Airport</option>
                                         <option value="LKO">LKO-Chaudhary Charan Singh International Airport</option>
                                         <option value="BLR">BLR-Bengaluru International Airport</option>
@@ -147,18 +143,38 @@
                                   </select>
                                 </div>
                                 <div class="form-group">
-                                        <h5> To:</h5>
-                                      <select class="form-control form-control-lg" id="exampleFormControlSelect2">
+                                  <h5>City (From):</h5>
+                                  <select class="form-control form-control-lg" id="from_city">
+                                    <option value="DEL">Delhi</option>
+                                    <option value="LKO">Lucknow</option>
+                                    <option value="BLR">Banglore</option>
+                                    <option value="MAA">Chennai</option>
+                                    <option value="BOM">Bombay</option>
+                              </select>
+                              </div>
+                                <div class="form-group">
+                                        <h5> Airport (To):</h5>
+                                      <select class="form-control form-control-lg" id="to_airline">
                                             <option value="ALB">ALB-Albany International Airport,USA</option>
                                             <option value="AUH">AUH-Abu Dhabi International</option>
                                             <option value="ESB">ESB-Esenboğa International Airport</option>
                                             <option value="ATH">ATH-Elefthérios Venizélos International Airport</option>
                                       </select>
                                     </div>
+                                    <div class="form-group">
+                                      <h5> City (To):</h5>
+                                      <select class="form-control form-control-lg" id="to_city">
+                                        <option value="DEL">Delhi</option>
+                                        <option value="LKO">Lucknow</option>
+                                        <option value="BLR">Banglore</option>
+                                        <option value="MAA">Chennai</option>
+                                        <option value="BOM">Bombay</option>
+                                  </select>
+                                  </div>
                         <div class="form-group">
                          <h5> AirLine Code:</h5>
                           <div class="form-group">
-                            <select class="form-control form-control-lg" id="exampleFormControlSelect2">
+                            <select class="form-control form-control-lg" id="airline_name">
                                 <option value="AC">AC-Air Canada</option>
                                 <option value="EM">EM-Empire Airlines</option>
                                 <option value="EV">EV-ExpressJet</option>
@@ -175,7 +191,7 @@
                                 
                               </span>
                             </div>
-                            <input type="date" class="form-control form-control-lg border-left-0" placeholder="Email">
+                            <input type="date" class="form-control form-control-lg border-left-0" id="travel_date">
                           </div>
                         </div>
                         <div class="form-group">
@@ -186,11 +202,42 @@
                                
                               </span>
                             </div>
-                            <input type="time" class="form-control form-control-lg border-left-0" placeholder="Email">
+                            <input type="time" class="form-control form-control-lg border-left-0" id="travel_time">
                           </div>
                         </div>
-                       
-                       
+                        <div class="form-group">
+                          <h5>Ticket Number</h5>
+                        <div class="input-group">
+                          <div class="input-group-prepend bg-transparent">
+                            <span class="input-group-text bg-transparent border-right-0">
+                             
+                            </span>
+                          </div>
+                          <input type="text" id="ticket" class="form-control form-control-lg border-left-0" placeholder="Ticket Number">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <h5>Money to be charged:</h5>
+                      <div class="input-group">
+                        <div class="input-group-prepend bg-transparent">
+                          <span class="input-group-text bg-transparent border-right-0">
+                           
+                          </span>
+                        </div>
+                        <input type="text" id="rate" class="form-control form-control-lg border-left-0" placeholder="Rate">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <h5>Weight to be carried (in kgs)</h5>
+                    <div class="input-group">
+                      <div class="input-group-prepend bg-transparent">
+                        <span class="input-group-text bg-transparent border-right-0">
+                         
+                        </span>
+                      </div>
+                      <input type="text" id="capacity" class="form-control form-control-lg border-left-0" placeholder="Capacity">
+                    </div>
+                  </div>
                         <div class="mb-4">
                           <div class="form-check">
                             <label class="form-check-label text-muted">

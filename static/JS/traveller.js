@@ -5,13 +5,13 @@ $(function(){
 
    var data = {};
    //data.username = $("#name").val();
-   data.airline = $("#aname").val();
-   data.date = $("#date").val();
-   data.time = $("#time").val();
-   data.to = $("#to").val();
-    data.toCity = $("#toCity").val();
-   data.from = $("#from").val();
-    data.fromCity = $("#fromCity").val();
+   data.airline = $("#airline_name").val();
+   data.date = $("#travel_date").val();
+   data.time = $("#travel_time").val();
+   data.to = $("#to_airline").val();
+    data.toCity = $("#to_city").val();
+   data.from = $("#from_airline").val();
+    data.fromCity = $("#from_city").val();
    data.ticket=$("#ticket").val();
    data.rate=$("#rate").val();
    data.capacity=$("#capacity").val();
