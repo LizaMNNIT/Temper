@@ -24,6 +24,12 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="css/cssFile.css">
+
+		<script type="text/javascript" src="JS/register.js"></script>
+		<script type="text/javascript" src="JS/login.js"></script>
+		<script type="text/javascript" src="JS/error.js"></script>
+		<script type="text/javascript" src="JS/root.js"></script>
+		<script type="text/javascript" src="JS/sender.js"></script>
 </head>
 
 <!-- --------------------------BODY STARTS ------------------------------------------- -->
@@ -201,27 +207,25 @@
     <h1 style="padding:15px;">Sender's Information</h1>
 		<div id="rr">
 			<div id="cc1">
-			<label for="userName"><b>userName</b></label><br><br>
 			<label for="lcn"><b>Location</b></label><br><br>
 			<label for="dtn"><b>Destination</b></label><br><br>
 		</div>
 		<div id="cc">
-    <input type="text" id="txt11" placeholder="Enter userName" name="userName" align="right" required><br><br>
-    <input type="text" id="txt11" placeholder="Enter your complete Location" name="lcn" align="right" required><br><br>
-    <input type="text" id="txt11" placeholder="Enter your complete Destination" name="dtn" align="right" required><br><br>
+    <input type="text" id="loc" placeholder="Enter your complete Location" name="lcn" align="right" required><br><br>
+    <input type="text" id="dest" placeholder="Enter your complete Destination" name="dtn" align="right" required><br><br>
 	</div>
   <div id="cc1">
 	<label for="fromDate"><b>fromDate</b></label><br><br>
-	<label for="toDate"><b>toDate</b></label><br><br>
+	<label for="toDate"><b>type</b></label><br><br>
 	<label for="weight"><b>Weight</b></label><br><br>
 </div>
 <div id="cc">
-    <input type="date" id="txt11" placeholder="fromDate" name="fromDate" align="right" required><br><br>
-    <input type="date" id="txt11" placeholder="toDate" name="toDate" align="right" required><br><br>
-    <input type="text" id="txt11" placeholder="Enter Weight" align="right" name="weight" required>
+    <input type="date" id="date" placeholder="fromDate" name="fromDate" align="right" required><br><br>
+    <input type="text" id="type" placeholder="type" name="type" align="right" required><br><br>
+    <input type="text" id="weight" placeholder="Enter Weight" align="right" name="weight" required>
 	</div>
 </div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <a href="#"><button type="submit" class="btns" style="color:#009999;">Submit</button></a>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <a href="#"><button type="submit" id="sender" class="btns" style="color:#009999;">Submit</button></a>
 			<br><br>
   </div>
 
