@@ -16,7 +16,7 @@ class respond{
       //console.log(JSON.stringify(senders));
       if(flag==1)
       {
-      connection.query('update info set status=? where SR_id=? and TR_id=?;update traveller set capacity=capacity-(select weight from sender where SR_id=?) where TR_id=?;insert into shipment values((select name from registration where userName=(select userName from sender where SR_id=?)),(select name from registration where userName=(select userName from traveller where TR_id=?)),(select date from traveller where TR_id=?),(select weight from sender where SR_id=?),?) ',[flag1,sr_id,tr_id,sr_id,tr_id,sr_id,tr_id,tr_id,sr_id,st], function (error, results, fields) {
+      connection.query('update info set status=? where SR_id=? and TR_id=?;update traveller set capacity=capacity-(select weight from sender where SR_id=?) where TR_id=?;insert into shipment values((select name from registration where userName=(select userName from sender where SR_id=?)),(select name from registration where userName=(select userName from traveller where TR_id=?)),(select location from sender where SR_id=?),(select destination from sender where SR_id=?),(select date from traveller where TR_id=?),(select weight from sender where SR_id=?),?) ',[flag1,sr_id,tr_id,sr_id,tr_id,sr_id,tr_id,sr_id,sr_id,tr_id,sr_id,st], function (error, results, fields) {
         if (error) {
           res.json({
               status:false,

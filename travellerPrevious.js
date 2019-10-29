@@ -9,7 +9,7 @@ class travellerPrevious{
     client.get("userName",function(err,reply) {
       var id=reply;
 
-      connection.query('select s.userName,r.name,s.destination,t.date from sender s, registration r,traveller t where s.SR_id in (select SR_id from info where TR_id in(select TR_id from traveller where userName=?)) and  s.userName= r.userName',[id], function (error, results, fields) {
+      connection.query('select S_name,fromCity,toCity,date,weight from shipment where T_name=?',[id], function (error, results, fields) {
         if (error) {
           res.json({
               status:false,
@@ -29,4 +29,4 @@ class travellerPrevious{
 
   }
 }
-module.exports=senderPrevious;
+module.exports=travellerPrevious;

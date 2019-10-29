@@ -17,6 +17,7 @@ var travellerController=require('./traveller');
 var req_Traveller=require('./traveller_request');
 var options_traveller=require('./viewResponse');
 var respond_traveller=require('./respond');
+var previous_traveller=require('./travellerPrevious');
 var cors=require('cors');
 var uuid=require('uuid');
 
@@ -67,7 +68,8 @@ app.post('/senderPrevious',(req,res)=>{
 });
 
 app.post('/traveller',(req,res)=>{
-  travellerController.travellerUser(req.body.airline,req.body.date,req.body.time,req.body.to,req.body.toCity,req.body.from,req.body.fromCity,req.body.ticket,req.body.rate,req.body.capacity,client,res);
+  travellerController.travellerUser(req.body.airline,req.body.date,req.body.time,req.body.to,
+    req.body.toCity,req.body.from,req.body.fromCity,req.body.ticket,req.body.rate,req.body.capacity,client,res);
 });
 app.post('/traveller_request',(req,res)=>{
   req_Traveller.travellerRequest(client,res);
@@ -78,6 +80,8 @@ app.post('/viewResponse',(req,res)=>{
 app.post('/respond',(req,res)=>{
   respond_traveller.response(req.body.sr_id,req.body.tr_id,req.body.flag,client,res);
 });
-
+app.post('/travellerPrevious',(req,res)=>{
+  previous_traveller.previous(client,res);
+});
 
 app.listen(4010);
