@@ -1,18 +1,34 @@
 
-var check=function()
-{
+  $(document).ready(function(e){
+    console.log(sessionStorage.getItem("isfalse"));
+     if(sessionStorage.getItem("isfalse")=="true")
+     return false;
+    console.log('select_link');
+
   $.ajax({
     type:'POST',
     crossDomain:true,
-    contentType:'application/json',
     url:'http://localhost:4010/',
     success:function(data)
     {
       console.log('root page');
       if(data.code==101)
-      window.location.replace('./choice.html');
+      {
+        sessionStorage.setItem("isfalse", "false");
+      location.assign('./choice.html');
+      }
       else if(data.code==102)
-      window.location.replace('./home.html');
+      {
+      sessionStorage.setItem("isfalse", "true");
+      location.assign('./home.html');
+      }
+    },
+    error: function( jqXHR, textStatus, errorThrown) {
+      //if body is empty we end up here
+     
+      console.log('error');
     }
-  })
-}
+  });
+});
+
+
