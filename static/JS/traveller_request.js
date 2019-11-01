@@ -6,7 +6,7 @@ $(document).ready(function(){
 $.ajax({
 type: 'POST',
             crossDomain: true,
-          url: 'http://localhost:4010/sender_requests',
+          url: 'http://localhost:4010/traveller_request',
             success: function(data) {
                 console.log('success');
 
@@ -16,9 +16,9 @@ type: 'POST',
                 console.log(data1);
                 if(data1=='')
                 {
-                  document.getElementById('t1').innerHTML="";
-                    document.getElementById('t1').innerHTML="There are no current requests";
-                    document.getElementById('t1').style.color="red";
+                  document.getElementById('t4').innerHTML="";
+                    document.getElementById('t4').innerHTML="There are no current trips";
+                    document.getElementById('t4').style.color="red";
                 }
 else{
         for (var i = 0; i < data1.length; i++) {
@@ -30,7 +30,7 @@ else{
         }
 
         // CREATE DYNAMIC TABLE.
-        var table = document.getElementById("t1");
+        var table = document.getElementById("t4");
 
 
 
@@ -53,7 +53,7 @@ else{
             }
 
             }
-            s=s+t+'" >View Options</button>'
+            s=s+t+'" >View requests</button>'
       tabCell.innerHTML=s;
 //onclick="View(this.id)"
 
@@ -77,6 +77,6 @@ else{
   $(document).on("click","button",function(){
    var btn=this.id;
 
-     localStorage.setItem( 'object', btn );
-      window.location.replace('/Temper/static/senderview.html');
+     localStorage.setItem( 'object1', btn );
+      window.location.replace('/Temper/static/travellercurrent.html');
  });

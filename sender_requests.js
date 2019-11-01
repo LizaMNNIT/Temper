@@ -9,7 +9,7 @@ class sender_request{
     client.get("userName",function(err,reply) {
       var id=reply;
 
-      connection.query('SELECT SR_id , fromDate ,location , destination ,weight,type  from sender where userName=?',[id], function (error, results, fields) {
+      connection.query('SELECT  SR_id, fromDate ,location , destination ,weight,type  from sender where userName=?',[id], function (error, results, fields) {
         if (error) {
           res.json({
               status:false,

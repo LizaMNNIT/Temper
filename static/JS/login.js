@@ -41,7 +41,7 @@ $.ajax({
                  }
                  else if(data.code==200)
                  {
-                   window.location.replace('/SoSiLi/static/choice.html');
+                   window.location.replace('/Temper/static/main_page.html');
                  }
 
 

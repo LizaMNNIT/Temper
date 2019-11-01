@@ -38,8 +38,7 @@ $.ajax({
                 }
                },
                error: function( jqXHR, textStatus, errorThrown) {
-           //if body is empty we end up here
-          // $('#popUpWindow2').modal('hide');
+
              $('#par1').text('Internal server error');
           $('#popUpWindow_ERROR').modal('show');
            console.log('error');
@@ -48,3 +47,5 @@ $.ajax({
              });
            });
        });
+
+    

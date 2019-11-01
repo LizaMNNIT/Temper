@@ -6,7 +6,7 @@ $(function(){
    var data = {};
    data.name = $("#name").val();
    data.email = $("#email").val();
-   data.userName = $("#userName").val();
+   data.userName = $("#userName1").val();
    data.password = $("#password").val();
    data.contact = $("#contact").val();
    data.aadhar = $("#aadhaar").val();

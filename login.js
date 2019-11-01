@@ -18,7 +18,7 @@ static loginUser(userName,pass,client,res)
       }else{
         if(results.length >0){
             if(password==results[0].password && results[0].expiryDate>=today){
-            //  console.log("hello");
+             console.log("hello");
             client.set('userName',username);
                 res.json({
                     status:true,

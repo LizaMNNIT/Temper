@@ -9,7 +9,7 @@ class traveller_request{
     client.get("userName",function(err,reply) {
       var id=reply;
 
-      connection.query('SELECT TR_id , flightName ,date, fromAirport ,toAirport,Ticket_No,rate,capacity  from traveller where userName=?',[id], function (error, results, fields) {
+      connection.query('SELECT TR_id , date, fromAirport ,toAirport,Ticket_No,capacity  from traveller where userName=?',[id], function (error, results, fields) {
         if (error) {
           res.json({
               status:false,

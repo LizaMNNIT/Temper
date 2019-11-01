@@ -47,8 +47,40 @@ app.post('/payment',(req,res)=>{
   paymentController.paymentUser(req.body.userName,req.body.amount,req.body.subs_date,req.body.subs_time,res);
 });
 
+app.post('/dashboard',(req,res)=>{
+  console.log("hello");
+  client.set('userName',req.body.userName);
+  res.json({
+    status:true,
+    message:'LoggedIn Successfully'
+  });
+});
+
 app.post('/login',(req,res)=>{
   loginController.loginUser(req.body.username1,req.body.password,client,res);
+});
+
+app.post('/logout',(req,res)=>{
+  client.del('userName', function(err, response) {
+     if (response == 1) {
+        console.log("Deleted Successfully!")
+     } else{
+      console.log("Cannot delete")
+     }
+  });
+res.json({
+  status:true,
+  message:'LoggedOut Successfully'
+});
+});
+
+app.post('/userName',(req,res)=>{
+  client.get("userName",function(err,reply) {
+    res.json({
+      status:true,
+      name:reply
+    });
+  });
 });
 
 app.post('/sender',(req,res)=>{
@@ -75,6 +107,7 @@ app.post('/traveller_request',(req,res)=>{
   req_Traveller.travellerRequest(client,res);
 });
 app.post('/viewResponse',(req,res)=>{
+  console.log('here');
   options_traveller.travellerOptions(req.body.id,client,res);
 });
 app.post('/respond',(req,res)=>{

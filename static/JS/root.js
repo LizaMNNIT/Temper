@@ -15,7 +15,7 @@
       if(data.code==101)
       {
         sessionStorage.setItem("isfalse", "false");
-      location.assign('./choice.html');
+      location.assign('./main_page.html');
       }
       else if(data.code==102)
       {
@@ -25,10 +25,8 @@
     },
     error: function( jqXHR, textStatus, errorThrown) {
       //if body is empty we end up here
-     
+
       console.log('error');
     }
   });
 });
-
-
